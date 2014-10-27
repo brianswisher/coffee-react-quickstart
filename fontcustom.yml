@@ -28,7 +28,7 @@ input:
 # --------------------------------------------------------------------------- #
 
 output:
-  fonts: assets/fonts                             # required
+  fonts: app/assets/fonts                             # required
   css: src/styles/
 
 

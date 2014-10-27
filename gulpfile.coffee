@@ -11,7 +11,7 @@ _ = require 'underscore'
 $ = require('gulp-load-plugins')()
 
 gulp.task('copy-assets', ->
-    gulp.src('assets/**')
+    gulp.src('app/assets/**')
       .pipe(gulp.dest('build'))
       .pipe($.size())
 )
@@ -32,7 +32,7 @@ gulp.task('font', $.shell.task([
 ]))
 
 gulp.task('font-base-64', ->
-  gulp.src('assets/fonts/*.ttf')
+  gulp.src('app/assets/fonts/*.ttf')
     .pipe($.rename('fontcustom.ttf'))
     .pipe($.cssfont64())
     .pipe($.rename('_fontcustom_embedded.scss'))
@@ -48,7 +48,7 @@ gulp.task "webpack:build", (callback) ->
     return
 
 gulp.task '_watch', ->
-  gulp.watch(['assets/**'], ['copy-assets'])
+  gulp.watch(['app/assets/**'], ['copy-assets'])
 
 gulp.task 'default', ->
   gulp.start 'build'
