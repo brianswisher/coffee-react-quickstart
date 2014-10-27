@@ -23,11 +23,11 @@ build/Release
 # Deployed apps should consider commenting this line out:
 # see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules
-public/bundle.js
+build/bundle.js
 .sass-cache/
-public/bundle.js.map
-public/index.html
-public/main.css
+build/bundle.js.map
+build/index.html
+build/main.css
 .fontcustom-manifest.json
-public/fonts/
-public/main.css.map
+build/fonts/
+build/main.css.map

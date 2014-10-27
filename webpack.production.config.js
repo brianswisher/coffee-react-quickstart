@@ -11,7 +11,7 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-      path: path.join(__dirname, "public"),
+      path: path.join(__dirname, "build"),
       filename: "[name].bundle.js",
       chunkFilename: "[id].chunk.js"
   },
