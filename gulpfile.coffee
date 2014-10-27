@@ -111,11 +111,18 @@ gulp.task "webpack-dev-server", (callback) ->
 
   return
 
+gulp.task 'wwatch', ->
+  gulp.watch(['src/styles/**'], ['css'])
+  gulp.watch(['assets/**'], ['copy-assets'])
+
 gulp.task 'default', ->
   gulp.start 'build'
 
 gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
 
-gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
-  gulp.watch(['src/styles/**'], ['css'])
-  gulp.watch(['assets/**'], ['copy-assets'])
+gulp.task 'watch', [
+  'css'
+  'copy-assets'
+  'webpack-dev-server'
+], ->
+  gulp.start 'wwatch'
