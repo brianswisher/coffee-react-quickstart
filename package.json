@@ -32,7 +32,10 @@
   },
   "devDependencies": {
     "body-parser": "^1.9.1",
-    "cult": "^2.0.0"
+    "cult": "^2.0.0",
+    "express": "^4.10.0",
+    "proxy-middleware": "^0.7.0",
+    "webpack-dev-middleware": "^1.0.11"
   },
   "homepage": "https://github.com/KyleAMathews/coffee-react-quickstart",
   "jest": {

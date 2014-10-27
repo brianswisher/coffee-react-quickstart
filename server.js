@@ -20,3 +20,10 @@ server.listen(8080, 'localhost', function (err, result) {
 
   console.log('Listening at localhost:8080');
 });
+
+var express = require('express');
+var app = express();
+app.get('/*', function(req, res) {
+    res.sendFile(__dirname + '/build/index.html');
+});
+app.listen(8081);
