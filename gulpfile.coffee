@@ -58,5 +58,5 @@ gulp.task 'build', ['webpack:build', 'copy-assets']
 gulp.task 'watch', [
   'copy-assets'
 ], ->
-  require './server'
+  require './webpack_dev_server'
   gulp.start '_watch'
