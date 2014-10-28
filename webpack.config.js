@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var env = 'production'
+var env = process.env.NODE_ENV || 'production'
 var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = require("./make-webpack-config")({

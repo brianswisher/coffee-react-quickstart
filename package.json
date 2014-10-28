@@ -35,9 +35,7 @@
     "css-loader": "^0.8.0",
     "cult": "^2.0.0",
     "express": "^4.10.0",
-    "proxy-middleware": "^0.7.0",
-    "sass-loader": "^0.3.0",
-    "webpack-dev-middleware": "^1.0.11"
+    "sass-loader": "^0.3.0"
   },
   "homepage": "https://github.com/KyleAMathews/coffee-react-quickstart",
   "jest": {
@@ -66,7 +64,7 @@
   ],
   "license": "MIT",
   "main": "server.coffee",
-  "repository": "git@github.com:KyleAMathews/coffee-react-quickstart.git",
+  "repository": "git@github.com:brianswisher/coffee-react-quickstart.git",
   "scripts": {
     "start": "./node_modules/.bin/cult watch",
     "build": "./node_modules/.bin/cult build",

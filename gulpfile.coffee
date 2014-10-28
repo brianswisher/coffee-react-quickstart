@@ -16,29 +16,6 @@ gulp.task('copy-assets', ->
       .pipe($.size())
 )
 
-# Some quick notes on using fontcustom.
-# First you need to install some additional software
-# as detailed at https://github.com/FontCustom/fontcustom#installation
-# On MacOSX, this comment was the only way I got things to work: https://github.com/FontCustom/fontcustom/issues/209#issuecomment-48014939
-# Otherwise I got a Python import error.
-#
-# Then once things are working, things here are setup so that the generated font
-# is base64 encoded and included in the css file. For this to work, you
-# need to edit the generated scss file at app/modules/styles/_fontcustom.scss to remove
-# its font-face imports.
-# Font compilation
-gulp.task('font', $.shell.task([
-  'fontcustom compile'
-]))
-
-gulp.task('font-base-64', ->
-  gulp.src('app/assets/fonts/*.ttf')
-    .pipe($.rename('fontcustom.ttf'))
-    .pipe($.cssfont64())
-    .pipe($.rename('_fontcustom_embedded.scss'))
-    .pipe(gulp.dest('app/modules/styles/'))
-)
-
 gulp.task "webpack:build", (callback) ->
   # Run webpack.
   webpack webpackConfig, (err, stats) ->
