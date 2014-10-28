@@ -2,7 +2,6 @@ gulp = require 'gulp'
 gutil = require 'gulp-util'
 webpack = require("webpack")
 webpackConfig = require("./webpack.config.js")
-webpackProductionConfig = require("./webpack.production.config.js")
 map = require 'map-stream'
 touch = require 'touch'
 _ = require 'underscore'
@@ -41,7 +40,7 @@ gulp.task('font-base-64', ->
 
 gulp.task "webpack:build", (callback) ->
   # Run webpack.
-  webpack webpackProductionConfig, (err, stats) ->
+  webpack webpackConfig, (err, stats) ->
     throw new gutil.PluginError("webpack:build", err)  if err
     gutil.log "[webpack:build]", stats.toString(colors: true)
     callback()

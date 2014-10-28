@@ -1,24 +1,36 @@
 var path = require('path');
 var webpack = require('webpack');
+var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
-  entry: [
-    "webpack-dev-server/client?http://0.0.0.0:8080",
-    'webpack/hot/dev-server',
-    './src/scripts/router'
-  ],
-  devtool: "source-map",
-  debug: true,
+  entry: {
+    app: [
+      './src/scripts/router'
+    ],
+    landingPage: './src/scripts/LandingPageEntry'
+  },
+  devtool: 'source-map',
   output: {
-    path: path.join(__dirname, "build"),
-    filename: 'bundle.js'
+      path: path.join(__dirname, "build"),
+      filename: "[name].bundle.js",
+      chunkFilename: "[id].chunk.js"
   },
   resolveLoader: {
-    modulesDirectories: ['node_modules']
+    modulesDirectories: ['..', 'node_modules']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.IgnorePlugin(/vertx/) // https://github.com/webpack/webpack/issues/353
+    new webpack.DefinePlugin({
+      // This has effect on the react lib size.
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    }),
+    new webpack.IgnorePlugin(/vertx/),
+    new webpack.IgnorePlugin(/un~$/),
+    new webpack.IgnorePlugin(/^\.\/lang$/, /moment$/),
+    new CommonsChunkPlugin("commons.js"),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
   ],
   resolve: {
     extensions: ['', '.js', '.cjsx', '.coffee']
@@ -26,7 +38,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loaders: ['style', 'css']},
-      { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
+      { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
       { test: /\.coffee$/, loader: 'coffee' }
     ]
   }

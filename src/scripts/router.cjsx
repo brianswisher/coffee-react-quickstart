@@ -1,6 +1,6 @@
 # Load css first thing. It gets injected in the <head> in a <style> element by
 # the Webpack style-loader.
-require '../../build/main.css'
+# require '../../build/main.css'
 
 React = require 'react'
 # Assign React to Window so the Chrome React Dev Tools will work.

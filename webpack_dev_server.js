@@ -1,10 +1,11 @@
 var bodyParser = require('body-parser');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+var config = require('./webpack.dev.config');
+var port = process.env.PORT || 8080
 
 var server = new WebpackDevServer(webpack(config), {
-  contentBase: './build/',
+  contentBase: config.output.path,
   hot: true,
   watchDelay: 100,
   noInfo: true,
@@ -13,10 +14,10 @@ var server = new WebpackDevServer(webpack(config), {
 server.app.use(bodyParser.json());
 server.app.use(bodyParser.urlencoded({extended: true}));
 
-server.listen(8080, 'localhost', function (err, result) {
+server.listen(port, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:8080');
+  console.log('Webpack dev server listening at localhost:' + port);
 });
