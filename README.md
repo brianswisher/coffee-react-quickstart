@@ -17,16 +17,16 @@ It has a number of nice goodies baked in including:
 
 ## Install dependencies
 
-Clone this repo and then after entering the new directory run `npm install` and `bundle install`. This will install the respective NPM and Ruby Gem dependencies.
+Clone this repo and then after entering the new directory run `npm install`.
 
 You'll also need to have cult/gulp installed globally to run the coffeescript gulpfile: `npm install -g gulp cult`
 
 ## Development
-Run in the root of your directory: `cult watch`
+Run in the root of your directory: `npm start`
 
 This will watch the src directories and build on changes and placed the built css and js files in the build directory. It'll serve everything in the /build directory at localhost:8080
 
-Then try editing `src/scripts/hello_world.cjsx` and see your changes magically show up in your browser with *no* page reload!
+Then try editing `app/modules/hello_world/hello_world.cjsx` and see your changes magically show up in your browser with *no* page reload!
 
 ### If styles don't show up
 Restart `cult watch` and reload your browser.
@@ -35,8 +35,3 @@ The problem is that I have Webpack setup to package CSS for the browser but we'r
 
 # Production build
 To build for production, simply run `cult build`
-
-# Demo
-Try out the example app included with this quickstart: http://kyleamathews.github.io/coffee-react-quickstart/
-
-
