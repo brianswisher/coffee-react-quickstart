@@ -6,9 +6,9 @@ var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChu
 module.exports = require("./make-webpack-config")({
   entry: {
     app: [
-      './modules/scripts/router'
+      './app/modules/scripts/router'
     ],
-    landingPage: './modules/scripts/LandingPageEntry'
+    landingPage: './app/modules/scripts/LandingPageEntry'
   },
   debug: false,
   output: {
