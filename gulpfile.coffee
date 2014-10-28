@@ -16,11 +16,6 @@ gulp.task('copy-assets', ->
       .pipe($.size())
 )
 
-gulp.task('copy-index', ->
-    gulp.src('app/index.html')
-      .pipe(gulp.dest('build/'+env))
-)
-
 # Some quick notes on using fontcustom.
 # First you need to install some additional software
 # as detailed at https://github.com/FontCustom/fontcustom#installation
@@ -61,12 +56,10 @@ gulp.task 'default', ->
 gulp.task 'build', [
   'webpack:build'
   'copy-assets'
-  'copy-index'
 ]
 
 gulp.task 'watch', [
   'copy-assets'
-  'copy-index'
 ], ->
   require './webpack_dev_server'
   gulp.start '_watch'
