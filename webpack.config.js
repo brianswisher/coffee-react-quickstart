@@ -7,8 +7,8 @@ module.exports = require("./make-webpack-config")({
   entry: {
     app: [
       './app/modules/example/router'
-    ],
-    landingPage: './app/modules/scripts/LandingPageEntry'
+    ]
+    //,landingPage: './app/modules/scripts/LandingPageEntry'
   },
   debug: false,
   output: {

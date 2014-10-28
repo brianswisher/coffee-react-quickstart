@@ -10,10 +10,7 @@ It has a number of nice goodies baked in including:
 * Amazing URL-driven-development (UDD) with the [react-router project](https://github.com/rackt/react-router).
 * Uses [Gulp](http://gulpjs.com/) for building CSS and Javascript. Run `cult watch` for rebuilding css/js on the fly while developing and `cult build` to create minified versions for deploying to production.
 * Includes sensible element stylings and several useful Sass plugins:
-  * <a href="http://susy.oddbird.net/">Susy</a>: best-of-breed grid system.
-  * <a href="https://github.com/Team-Sass/modular-scale">modular-scale</a>: easily create pleasing modular type scales.
-  * <a href="https://github.com/jhardy/Sassy-Buttons">Sassy Buttons</a>: flexible button styling.
-  * <a href="http://breakpoint-sass.com/">Breakpoint</a>: Super simple media queries.
+  * <a href="http://bourbon.io/">Bourbon</a>: a simple and lightweight mixin library for Sass.
 
 ## Install dependencies
 

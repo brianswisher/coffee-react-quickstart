@@ -2,12 +2,12 @@
 
 # TODO make this work.
 
-jest.dontMock '../src/scripts/hello_world'
+jest.dontMock '../app/modules/hello_world/hello_world'
 
 describe 'HelloWorld', ->
   it 'should render an <h1> with the text "Hello World!"', ->
     React = require 'react/addons'
-    HelloWorld = require '../src/scripts/hello_world'
+    HelloWorld = require '../app/modules/hello_world/hello_world'
     TestUtils = React.addons.TestUtils
 
     # Render the HelloWorld component.
