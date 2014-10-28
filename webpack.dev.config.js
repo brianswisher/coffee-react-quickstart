@@ -6,7 +6,7 @@ module.exports = require("./make-webpack-config")({
 	entry: [
     "webpack-dev-server/client?http://0.0.0.0:8080",
     'webpack/hot/dev-server',
-    './src/scripts/router'
+    './modules/scripts/router'
   ],
   debug: true,
   output: {

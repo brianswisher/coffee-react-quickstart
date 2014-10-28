@@ -29,7 +29,7 @@ gulp.task('copy-index', ->
 #
 # Then once things are working, things here are setup so that the generated font
 # is base64 encoded and included in the css file. For this to work, you
-# need to edit the generated scss file at src/styles/_fontcustom.scss to remove
+# need to edit the generated scss file at modules/styles/_fontcustom.scss to remove
 # its font-face imports.
 # Font compilation
 gulp.task('font', $.shell.task([
@@ -41,7 +41,7 @@ gulp.task('font-base-64', ->
     .pipe($.rename('fontcustom.ttf'))
     .pipe($.cssfont64())
     .pipe($.rename('_fontcustom_embedded.scss'))
-    .pipe(gulp.dest('src/styles/'))
+    .pipe(gulp.dest('modules/styles/'))
 )
 
 gulp.task "webpack:build", (callback) ->
