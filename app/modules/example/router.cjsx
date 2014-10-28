@@ -10,8 +10,8 @@ Routes = require('react-router').Routes
 Route = require('react-router').Route
 
 # Require route components.
-HelloWorld = require './hello_world'
-StyleGuide = require './styleguide'
+HelloWorld = require './hello_world/hello_world'
+StyleGuide = require './styleguide/styleguide'
 App = require './app'
 
 React.renderComponent((

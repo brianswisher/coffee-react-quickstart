@@ -1,3 +1,5 @@
+require './hello_world.css'
+
 Link = require('react-router').Link
 
 module.exports = React.createClass
@@ -7,7 +9,7 @@ module.exports = React.createClass
     window.scroll(0,0)
 
   render: ->
-    <div>
+    <div className="hello-world">
       <h1>Hello world!</h1>
       <p>You&apos;re looking at the <a href="https://github.com/KyleAMathews/coffee-react-quickstart">Coffeescript React Quickstart</a> project by <a href="https://twitter.com/kylemathews">Kyle Mathews</a>.</p>
       <p>It has a number of nice goodies baked in including:</p>

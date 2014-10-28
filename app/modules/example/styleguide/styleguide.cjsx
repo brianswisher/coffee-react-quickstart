@@ -1,3 +1,5 @@
+require './styleguide.css'
+
 Link = require('react-router').Link
 highlightJS = require 'highlight.js'
 
@@ -10,7 +12,7 @@ module.exports = React.createClass
     highlightJS.highlightBlock(@refs.code.getDOMNode(), 'scss')
 
   render: ->
-    <div>
+    <div className="styleguide">
       <h1>Styleguide</h1>
 
       <p>The purpose of a styleguide like this is to help determine what the default CSS settings are and to ensure all normal HTML Elements are styled while designing a site.</p>
@@ -148,4 +150,3 @@ And over all the sky—the sky! far, far out of reach, studded,
       <h6>This is an example of heading 6</h6>
       <p>A simple paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-
