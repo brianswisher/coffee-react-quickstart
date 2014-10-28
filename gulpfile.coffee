@@ -5,13 +5,14 @@ webpackConfig = require("./webpack.config.js")
 map = require 'map-stream'
 touch = require 'touch'
 _ = require 'underscore'
+env = process.env.NODE_ENV || 'development'
 
 # Load plugins
 $ = require('gulp-load-plugins')()
 
 gulp.task('copy-assets', ->
     gulp.src('app/assets/**')
-      .pipe(gulp.dest('build'))
+      .pipe(gulp.dest('build/'+env))
       .pipe($.size())
 )
 
