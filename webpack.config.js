@@ -1,22 +1,20 @@
 var path = require('path');
 var webpack = require('webpack');
+var env = 'production'
 var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
 
-module.exports = {
+module.exports = require("./make-webpack-config")({
   entry: {
     app: [
       './src/scripts/router'
     ],
     landingPage: './src/scripts/LandingPageEntry'
   },
-  devtool: 'source-map',
+  debug: false,
   output: {
-      path: path.join(__dirname, "build"),
+      path: path.join(__dirname, "build", env),
       filename: "[name].bundle.js",
       chunkFilename: "[id].chunk.js"
-  },
-  resolveLoader: {
-    modulesDirectories: ['..', 'node_modules']
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -31,15 +29,5 @@ module.exports = {
     new CommonsChunkPlugin("commons.js"),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
-  ],
-  resolve: {
-    extensions: ['', '.js', '.cjsx', '.coffee']
-  },
-  module: {
-    loaders: [
-      { test: /\.css$/, loaders: ['style', 'css']},
-      { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
-      { test: /\.coffee$/, loader: 'coffee' }
-    ]
-  }
-};
+  ]
+});
