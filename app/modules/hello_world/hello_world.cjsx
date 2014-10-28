@@ -1,4 +1,4 @@
-require './hello_world.css'
+require './hello_world.scss'
 
 Link = require('react-router').Link
 

@@ -1,3 +1,5 @@
+var bourbon = require('node-bourbon').includePaths;
+
 module.exports = function(options) {
   return {
     entry: options.entry,
@@ -14,6 +16,7 @@ module.exports = function(options) {
     },
     module: {
       loaders: [
+        { test: /\.scss$/, loader: "style!css!sass?includePaths[]=" + bourbon},
         { test: /\.css$/, loaders: ['style', 'css']},
         { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
         { test: /\.coffee$/, loader: 'coffee' }

@@ -1,4 +1,4 @@
-require './styleguide.css'
+require './styleguide.scss'
 
 Link = require('react-router').Link
 highlightJS = require 'highlight.js'
