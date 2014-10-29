@@ -23,7 +23,7 @@ Run in the root of your directory: `npm start`
 
 This will watch the src directories and build on changes and placed the built css and js files in the build directory. It'll serve everything in the /build directory at localhost:8080
 
-Then try editing `app/modules/hello_world/hello_world.cjsx` and see your changes magically show up in your browser with *no* page reload!
+Then try editing `app/bundles/hello_world/hello_world.cjsx` and see your changes magically show up in your browser with *no* page reload!
 
 ### If styles don't show up
 Restart `cult watch` and reload your browser.
